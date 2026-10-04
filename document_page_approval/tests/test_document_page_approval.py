@@ -5,6 +5,10 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestDocumentPageApproval(BaseCommon):
+    # Odoo 20 : BaseCommon tourne avec un utilisateur de test (plus le
+    # superutilisateur) ; lui donner le rôle de gestionnaire des documents.
+    _test_user_groups = ("base.group_user", "document_page.group_document_manager")
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -179,7 +183,7 @@ class TestDocumentPageApproval(BaseCommon):
         )
 
         # Remove approval group from user2
-        self.user2.write({"group_ids": [(3, self.approver_gid.id)]})
+        self.user2.sudo().write({"group_ids": [(3, self.approver_gid.id)]})
         self.assertFalse(
             self.page2.with_user(self.user2).can_user_approve_this_page(self.user2)
         )
@@ -187,7 +191,7 @@ class TestDocumentPageApproval(BaseCommon):
     def test_pending_approval_detection(self):
         """Ensure the system detects pending approval changes"""
         # Reset page2 by removing previous history
-        self.history_obj.search([("page_id", "=", self.page2.id)]).unlink()
+        self.history_obj.search([("page_id", "=", self.page2.id)]).sudo().unlink()
 
         self.page2.invalidate_model()
         self.assertFalse(self.page2.has_changes_pending_approval)
