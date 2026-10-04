@@ -14,12 +14,16 @@ class AttachmentZippedDownloadController(http.Controller):
             return
         list_ids = map(int, ids.split(","))
         out_file = request.env["ir.attachment"].browse(list_ids)._create_temp_zip()
-        # Odoo 20 : odoo.http.Stream n'existe plus (même construction que /mail/attachment/zip)
+        # Odoo 20 : odoo.http.Stream n'existe plus
+        # (même construction que /mail/attachment/zip)
         content = out_file.getvalue()
         headers = [
             ("Content-Type", "application/zip"),
             ("X-Content-Type-Options", "nosniff"),
             ("Content-Length", len(content)),
-            ("Content-Disposition", content_disposition(request.env._("attachments.zip"))),
+            (
+                "Content-Disposition",
+                content_disposition(request.env._("attachments.zip")),
+            ),
         ]
         return request.make_response(content, headers)
