@@ -31,7 +31,7 @@ class IrAttachment(models.Model):
                 attachment.check_access("read")
                 zip_file.writestr(
                     attachment._compute_zip_file_name(),
-                    attachment.raw,
+                    bytes(attachment.raw),
                 )
             zip_buffer.seek(0)
             zip_file.close()

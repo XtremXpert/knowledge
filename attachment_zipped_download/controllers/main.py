@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 from odoo import http
 from odoo.http import request
+from odoo.http.stream import content_disposition
 
 
 class AttachmentZippedDownloadController(http.Controller):
@@ -13,11 +14,12 @@ class AttachmentZippedDownloadController(http.Controller):
             return
         list_ids = map(int, ids.split(","))
         out_file = request.env["ir.attachment"].browse(list_ids)._create_temp_zip()
-        stream = http.Stream(
-            type="data",
-            data=out_file.getvalue(),
-            mimetype="application/zip",
-            as_attachment=True,
-            download_name=request.env._("attachments.zip"),
-        )
-        return stream.get_response()
+        # Odoo 20 : odoo.http.Stream n'existe plus (même construction que /mail/attachment/zip)
+        content = out_file.getvalue()
+        headers = [
+            ("Content-Type", "application/zip"),
+            ("X-Content-Type-Options", "nosniff"),
+            ("Content-Length", len(content)),
+            ("Content-Disposition", content_disposition(request.env._("attachments.zip"))),
+        ]
+        return request.make_response(content, headers)

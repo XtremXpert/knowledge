@@ -2,8 +2,6 @@
 # @author Pierre Verkest <pierreverkest84@gmail.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-import base64
-
 from odoo import fields, models
 from odoo.orm.model_classes import add_to_registry
 
@@ -32,6 +30,16 @@ class TestIrAttachmentActionDownload(BaseCommon):
         cls.addClassCleanup(cls.registry.__delitem__, TestAttachmentDownload._name)
 
         cls.test_model = cls.env[TestAttachmentDownload._name]
+        # Odoo 20 : BaseCommon n'est plus superutilisateur, le modèle de test
+        # a besoin d'un accès explicite.
+        cls.env["ir.access"].sudo().create(
+            {
+                "name": "test.attachment.download",
+                "model_id": cls.env["ir.model"]._get_id(TestAttachmentDownload._name),
+                "group_id": cls.env.ref("base.group_user").id,
+                "operation": "crud",
+            }
+        )
 
         cls.partner_1 = cls.test_model.create({"name": "Test partner 1"})
         cls.partner_2 = cls.test_model.create({"name": "Test partner 2"})
@@ -49,7 +57,7 @@ class TestIrAttachmentActionDownload(BaseCommon):
                 "res_model": record._name,
                 "res_id": record.id,
                 "type": "binary",
-                "datas": base64.b64encode(b"Content"),
+                "raw": b"Content",
             }
         )
 
