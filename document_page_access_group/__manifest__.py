@@ -16,4 +16,5 @@
         "document_knowledge",
     ],
     "data": ["views/document_page.xml", "security/security.xml"],
+    "uninstall_hook": "uninstall_hook",
 }
