@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Document layout: cover, large title, category/project chips,
+         roomy editor, one-line optional revision note. -->
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_page</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_form" />
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="class">o_mk_wiki_form</attribute>
+            </form>
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="o_mk_cover_wrap" name="cover_wrap">
+                    <span class="o_mk_cover_hint" invisible="image"><i class="oi" data-icon="image" /> Add a cover</span>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='cover_wrap']/span" position="before">
+                <xpath expr="//field[@name='image']" position="move" />
+            </xpath>
+            <field name="image" position="attributes">
+                <attribute name="class">o_mk_cover</attribute>
+                <attribute name="style" />
+                <attribute name="options">{'img_class': 'o_mk_cover_img'}</attribute>
+            </field>
+            <xpath expr="//div[hasclass('oe_title')]" position="attributes">
+                <attribute name="class">oe_title o_mk_title</attribute>
+            </xpath>
+            <field name="name" position="attributes">
+                <attribute name="placeholder">Page title</attribute>
+            </field>
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <div class="o_mk_meta">
+                    <div class="o_mk_chip" name="chip_categorie" title="Category">
+                        <i class="oi" data-icon="folder_open" />
+                    </div>
+                    <div class="o_mk_chip" name="chip_projet" title="Project">
+                        <i class="oi" data-icon="work" />
+                    </div>
+                </div>
+            </xpath>
+            <div name="chip_categorie" position="inside">
+                <xpath expr="//field[@name='parent_id']" position="move" />
+            </div>
+            <div name="chip_projet" position="inside">
+                <xpath expr="//field[@name='project_id']" position="move" />
+            </div>
+            <field name="parent_id" position="attributes">
+                <attribute name="placeholder">Choose a category</attribute>
+                <attribute name="options">{'no_open': True}</attribute>
+            </field>
+            <field name="project_id" position="attributes">
+                <attribute name="placeholder">Project (optional)</attribute>
+                <attribute name="options">{'no_open': True}</attribute>
+            </field>
+            <field name="content" position="attributes">
+                <attribute name="class">o_mk_content</attribute>
+                <attribute
+                    name="placeholder"
+                >Start writing… (type “/” for headings, lists, tables, images)</attribute>
+            </field>
+            <field name="content" position="after">
+                <div class="o_mk_revision" invisible="not id">
+                    <i class="oi" data-icon="history" title="Revision" />
+                    <field
+                        name="revision_note"
+                        placeholder="Revision note (optional)"
+                    />
+                </div>
+            </field>
+            <xpath expr="//field[@name='draft_name']/.." position="replace" />
+            <!-- Nothing to show before the first save. -->
+            <notebook position="attributes">
+                <attribute name="invisible">not id</attribute>
+            </notebook>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="knowledge_search.WikiSearch">
+        <div class="o_action o_mk_search">
+            <div class="o_mk_search_box">
+                <i class="oi" data-icon="search" />
+                <input
+                    t-ref="this.inputRef"
+                    type="search"
+                    placeholder="Search titles and content of wiki pages…"
+                    t-att-value="this.state.query"
+                    t-on-input="(ev) => this.onInput(ev)"
+                    t-on-keydown="(ev) => this.onKeydown(ev)"
+                />
+            </div>
+            <div class="o_mk_search_hint" t-if="!this.state.searched">
+                <p>Accents and case are ignored; every word must appear.</p>
+                <p>Tip: from anywhere, Ctrl+K (⌘K on Mac) then “?” searches the wiki.</p>
+            </div>
+            <div class="o_mk_search_hint" t-elif="!this.state.results.length">
+                No page contains these words.
+            </div>
+            <ol class="o_mk_search_results" t-else="">
+                <t t-foreach="this.state.results" t-as="result" t-key="result.id">
+                    <li class="o_mk_search_result" t-on-click="() => this.open(result)">
+                        <div class="o_mk_search_title">
+                            <i class="oi" data-icon="description" />
+                            <span t-out="result.name" />
+                        </div>
+                        <div class="o_mk_search_meta">
+                            <span t-if="result.category">
+                                <i class="oi" data-icon="folder" /> <t t-out="result.category" />
+                            </span>
+                            <span t-out="result.date" />
+                        </div>
+                        <p class="o_mk_search_snippet" t-out="result.snippet" />
+                    </li>
+                </t>
+            </ol>
+        </div>
+    </t>
+</templates>

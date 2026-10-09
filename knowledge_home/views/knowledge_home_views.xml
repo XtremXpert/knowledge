@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Landing page of the Knowledge app. sequence=0 so it comes before the
+         "Search" menu (sequence=1) added by knowledge_search. -->
+    <record id="action_knowledge_home" model="ir.actions.client">
+        <field name="name">Accueil Connaissances</field>
+        <field name="tag">knowledge_home.home</field>
+        <field name="path">knowledge-home</field>
+    </record>
+    <menuitem id="menu_knowledge_home"
+        name="Accueil"
+        parent="document_knowledge.menu_document_root"
+        action="action_knowledge_home"
+        sequence="0"
+    />
+</odoo>

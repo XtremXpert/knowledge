@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_wiki_search" model="ir.actions.client">
+        <field name="name">Search the wiki</field>
+        <field name="tag">knowledge_search.wiki_search</field>
+        <field name="path">wiki-search</field>
+    </record>
+    <menuitem
+        id="menu_wiki_search"
+        name="Search"
+        parent="document_knowledge.menu_document_root"
+        action="action_wiki_search"
+        sequence="1"
+    />
+</odoo>

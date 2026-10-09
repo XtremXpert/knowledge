@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_tree
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 14:14+0000\n"
+"PO-Revision-Date: 2026-10-05 14:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: knowledge_tree
+#. odoo-python
+#: code:addons/knowledge_tree/models/document_page.py:0
+msgid "A category cannot be moved into itself."
+msgstr ""
+
+#. module: knowledge_tree
+#: model:ir.model.fields,field_description:knowledge_tree.field_document_page__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: knowledge_tree
+#: model:ir.model,name:knowledge_tree.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Filter pages"
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Hide the wiki tree"
+msgstr ""
+
+#. module: knowledge_tree
+#: model:ir.model.fields,field_description:knowledge_tree.field_document_page__id
+msgid "ID"
+msgstr ""
+
+#. module: knowledge_tree
+#: model:ir.module.module,shortdesc:base.module_knowledge_tree
+msgid "Knowledge Tree"
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "New page in this category"
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "No page found."
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-python
+#: code:addons/knowledge_tree/models/document_page.py:0
+msgid "Pages can only be moved into a category."
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Show the wiki tree"
+msgstr ""
+
+#. module: knowledge_tree
+#: model:ir.module.module,summary:base.module_knowledge_tree
+msgid ""
+"Wiki tree beside the page: categories and pages, drag and drop, quick add"
+msgstr ""
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.js:0
+msgid "Without category"
+msgstr ""
