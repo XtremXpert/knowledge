@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_page
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 13:53+0000\n"
+"PO-Revision-Date: 2026-10-05 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "<i class=\"oi\" data-icon=\"history\" title=\"Revision\"/>"
+msgstr "<i class=\"oi\" data-icon=\"history\" title=\"Révision\"/>"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid ""
+"<span class=\"o_mk_cover_hint\" invisible=\"image\"><i class=\"oi\" data-"
+"icon=\"image\"/> Add a cover</span>"
+msgstr ""
+"<span class=\"o_mk_cover_hint\" invisible=\"image\"><i class=\"oi\" data-"
+"icon=\"image\"/> Ajouter une couverture</span>"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Choose a category"
+msgstr "Choisir une catégorie"
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__cover_color
+msgid "Cover Color"
+msgstr "Couleur de couverture"
+
+#. module: knowledge_page
+#. odoo-python
+#: code:addons/knowledge_page/models/document_page.py:0
+msgid "Created"
+msgstr "Création"
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: knowledge_page
+#: model:ir.model,name:knowledge_page.model_document_page
+msgid "Document Page"
+msgstr "Page de document"
+
+#. module: knowledge_page
+#: model:ir.module.module,summary:base.module_knowledge_page
+msgid "Document-style wiki pages: cover, cards, optional revision note"
+msgstr "Pages wiki façon document : couverture, cartes, note de révision facultative"
+
+#. module: knowledge_page
+#. odoo-python
+#: code:addons/knowledge_page/models/document_page.py:0
+msgid "Edited"
+msgstr "Modification"
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__content_excerpt
+msgid "Excerpt"
+msgstr "Extrait"
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_page
+#: model:ir.module.module,shortdesc:base.module_knowledge_page
+msgid "Knowledge Pages"
+msgstr "Connaissances – Pages"
+
+#. module: knowledge_page
+#: model:ir.model.fields,help:knowledge_page.field_document_page__revision_note
+msgid "Optional: what changed. The revision name is set automatically."
+msgstr "Facultatif : ce qui a changé. Le nom de la révision est automatique."
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__page_count
+msgid "Page Count"
+msgstr "Nombre de pages"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Page title"
+msgstr "Titre de la page"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Project"
+msgstr "Projet"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Project (optional)"
+msgstr "Projet (facultatif)"
+
+#. module: knowledge_page
+#. odoo-python
+#: code:addons/knowledge_page/models/document_page.py:0
+msgid "Rev. %s"
+msgstr "Rév. %s"
+
+#. module: knowledge_page
+#: model:ir.model.fields,field_description:knowledge_page.field_document_page__revision_note
+msgid "Revision Note"
+msgstr "Note de révision"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Revision note (optional)"
+msgstr "Note de révision (facultatif)"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_form
+msgid "Start writing… (type “/” for headings, lists, tables, images)"
+msgstr "Commencez à écrire… (tapez « / » pour titres, listes, tableaux, images)"
+
+#. module: knowledge_page
+#: model_terms:ir.ui.view,arch_db:knowledge_page.view_wiki_kanban
+msgid "pages"
+msgstr "pages"

@@ -12,6 +12,25 @@
 
 knowledge
 
+## Shared wiki interface (Odoo 20)
+
+This fork also maintains the reusable wiki interface extracted from
+`XtremXpert/maison` at commit `59ce177e5ccd567b51fccf0515e8136c65c42cfc`:
+
+- `knowledge_page`: document-style pages, category/project cards and revision notes.
+- `knowledge_tree`: page/category navigation, quick creation and drag-and-drop moves.
+- `knowledge_search`: full-text search, highlighted excerpts and the command palette.
+- `knowledge_home`: default landing page with a tree, recent pages and mobile navigation.
+
+Install `knowledge_home` to enable the complete interface and its dependencies.
+The technical module names, XML IDs, versions and existing APIs are retained so
+consuming projects can change source paths without reinstalling existing modules.
+Maintain these four modules here. Maison imports their exact pinned contents
+through `addons.lock` / `odoo-dev vendor` and retains its integration tests.
+
+The extraction itself does not activate the home module on an existing database;
+installation and production promotion are separate operations.
+
 <!-- /!\ do not modify below this line -->
 
 <!-- prettier-ignore-start -->

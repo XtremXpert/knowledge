@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Cards with cover: default kanban view for pages and categories. -->
+    <record id="view_wiki_kanban" model="ir.ui.view">
+        <field name="name">document.page.kanban - knowledge_page</field>
+        <field name="model">document.page</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <kanban
+                js_class="document_page_kanban_view"
+                highlight_color="color"
+                class="o_mk_wiki_kanban"
+            >
+                <field name="type" />
+                <field name="cover_color" />
+                <field name="image" />
+                <templates>
+                    <t t-name="card" class="p-0 o_mk_card">
+                        <div
+                            t-attf-class="o_mk_card_cover o_mk_card_color_#{record.cover_color.raw_value or 0}"
+                        >
+                            <field
+                                name="image"
+                                widget="image"
+                                options="{'img_class': 'o_mk_card_img'}"
+                                t-if="record.image.raw_value"
+                            />
+                            <i
+                                t-else=""
+                                class="oi"
+                                t-att-data-icon="record.type.raw_value === 'category' ? 'folder_open' : 'description'"
+                            />
+                        </div>
+                        <div class="o_mk_card_body">
+                            <field name="name" class="o_mk_card_title" />
+                            <div
+                                t-if="record.type.raw_value === 'category'"
+                                class="o_mk_card_meta"
+                            >
+                                <i class="oi" data-icon="description" />
+                                <field name="page_count" /> pages
+                            </div>
+                            <div t-elif="record.parent_id.raw_value" class="o_mk_card_meta">
+                                <i class="oi" data-icon="folder_open" />
+                                <field name="parent_id" />
+                            </div>
+                            <field
+                                name="content_excerpt"
+                                class="o_mk_card_excerpt"
+                                t-if="record.type.raw_value === 'content'"
+                            />
+                            <footer
+                                t-if="record.type.raw_value === 'content'"
+                                class="o_mk_card_footer"
+                            >
+                                <field name="write_date" widget="date" />
+                                <field name="content_uid" widget="many2one_avatar_user" />
+                            </footer>
+                        </div>
+                        <!-- Clicking a category opens its pages (OCA controller). -->
+                        <div
+                            t-if="record.type.raw_value === 'category'"
+                            class="o_document_page_kanban_boxes d-none"
+                        >
+                            <a
+                                class="o_document_page_kanban_box"
+                                name="%(document_page.action_browse_all_content)d"
+                                type="action"
+                            />
+                        </div>
+                    </t>
+                    <t t-name="menu">
+                        <field name="color" widget="kanban_color_picker" />
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="document_page.action_page" model="ir.actions.act_window">
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+    <record id="action_page_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="-1" />
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_wiki_kanban" />
+        <field name="act_window_id" ref="document_page.action_page" />
+    </record>
+</odoo>

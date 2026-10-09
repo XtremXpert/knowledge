@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="knowledge_tree.WikiTree">
+        <t t-if="!this.ui.isSmall and !this.env.inDialog">
+            <t t-custom-portal="'.o_action_manager .o_form_view .o_content'">
+                <aside class="o_mk_tree" t-att-class="{ 'o_mk_tree_hidden': this.state.hidden }">
+                    <t t-if="this.state.hidden">
+                        <button
+                            class="btn btn-link o_mk_tree_toggle"
+                            title="Show the wiki tree"
+                            t-on-click="() => this.toggleHidden()"
+                        >
+                            <i class="oi" data-icon="left_panel_open" />
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <div class="o_mk_tree_head">
+                            <input
+                                type="search"
+                                class="form-control form-control-sm"
+                                placeholder="Filter pages"
+                                t-att-value="this.state.filter"
+                                t-on-input="(ev) => this.onFilterInput(ev)"
+                            />
+                            <button
+                                class="btn btn-link o_mk_tree_toggle"
+                                title="Hide the wiki tree"
+                                t-on-click="() => this.toggleHidden()"
+                            >
+                                <i class="oi" data-icon="left_panel_close" />
+                            </button>
+                        </div>
+                        <ul class="o_mk_tree_list">
+                            <t t-foreach="this.rows" t-as="row" t-key="row.node.id">
+                                <t t-set="node" t-value="row.node" />
+                                <li>
+                                    <div
+                                        class="o_mk_tree_row"
+                                        t-att-class="{
+                                            'o_mk_tree_category': node.isCategory,
+                                            'o_mk_tree_current': node.id === this.currentId,
+                                            'o_mk_tree_drop': node.id === this.state.dropId,
+                                        }"
+                                        t-att-style="'padding-left: ' + (0.25 + row.depth * 1.1) + 'rem'"
+                                        t-att-draggable="node.isVirtual ? 'false' : 'true'"
+                                        t-att-title="node.name"
+                                        t-on-click="() => this.onClick(node)"
+                                        t-on-dragstart="(ev) => this.onDragStart(ev, node)"
+                                        t-on-dragover="(ev) => this.onDragOver(ev, node)"
+                                        t-on-dragleave="() => this.onDragLeave(node)"
+                                        t-on-dragend="() => this.onDragEnd()"
+                                        t-on-drop="(ev) => this.onDrop(ev, node)"
+                                    >
+                                        <i
+                                            t-if="node.isCategory"
+                                            class="oi o_mk_tree_caret"
+                                            t-att-data-icon="this.isOpen(node) ? 'expand_more' : 'chevron_right'"
+                                        />
+                                        <span t-else="" class="o_mk_tree_caret" />
+                                        <i
+                                            class="oi o_mk_tree_icon"
+                                            t-att-data-icon="node.isCategory ? (this.isOpen(node) ? 'folder_open' : 'folder') : 'description'"
+                                        />
+                                        <span class="o_mk_tree_name text-truncate" t-out="node.name" />
+                                        <button
+                                            t-if="node.isCategory"
+                                            class="btn btn-link o_mk_tree_add"
+                                            title="New page in this category"
+                                            t-on-click.stop="() => this.newPage(node)"
+                                        >
+                                            <i class="oi" data-icon="add" />
+                                        </button>
+                                    </div>
+                                </li>
+                            </t>
+                        </ul>
+                        <div
+                            t-if="this.state.loaded and !this.roots.length"
+                            class="o_mk_tree_empty"
+                        >No page found.</div>
+                    </t>
+                </aside>
+            </t>
+        </t>
+    </t>
+</templates>

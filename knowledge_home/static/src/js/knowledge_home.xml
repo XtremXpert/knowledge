@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="knowledge_home.Home">
+        <div class="o_action o_mk_home">
+            <div
+                t-if="this.ui.isSmall and this.state.treeOpen"
+                class="o_mk_home_backdrop"
+                t-on-click="() => this.toggleTree()"
+            />
+            <aside
+                class="o_mk_home_tree"
+                t-att-class="{ 'o_mk_home_tree_mobile': this.ui.isSmall }"
+                t-if="!this.ui.isSmall or this.state.treeOpen"
+            >
+                <div class="o_mk_home_tree_head">
+                    <span>Catégories</span>
+                    <button
+                        t-if="this.ui.isSmall"
+                        class="btn btn-link o_mk_home_tree_close"
+                        title="Fermer"
+                        t-on-click="() => this.toggleTree()"
+                    >
+                        <i class="oi" data-icon="close" />
+                    </button>
+                </div>
+                <ul class="o_mk_home_tree_list">
+                    <t t-foreach="this.rows" t-as="row" t-key="row.node.id">
+                        <li>
+                            <div
+                                class="o_mk_home_tree_row"
+                                t-att-class="{ 'o_mk_home_tree_page': !row.node.is_category }"
+                                t-att-style="'padding-left: ' + (0.25 + row.depth * 1.1) + 'rem'"
+                                t-att-title="row.node.name"
+                                t-on-click="() => this.onNodeClick(row.node)"
+                            >
+                                <i
+                                    t-if="row.node.is_category"
+                                    class="oi o_mk_home_caret"
+                                    t-att-data-icon="this.isOpen(row.node) ? 'expand_more' : 'chevron_right'"
+                                />
+                                <span t-else="" class="o_mk_home_caret" />
+                                <i
+                                    class="oi o_mk_home_icon"
+                                    t-att-data-icon="row.node.is_category ? (this.isOpen(row.node) ? 'folder_open' : 'folder') : 'description'"
+                                />
+                                <span class="o_mk_home_tree_name" t-out="row.node.name" />
+                            </div>
+                        </li>
+                    </t>
+                </ul>
+                <div
+                    t-if="!this.state.loading and !this.rows.length"
+                    class="o_mk_home_empty"
+                >Aucune catégorie.</div>
+            </aside>
+            <main class="o_mk_home_main">
+                <button
+                    t-if="this.ui.isSmall"
+                    class="btn btn-secondary o_mk_home_tree_btn"
+                    t-on-click="() => this.toggleTree()"
+                >
+                    <i class="oi" data-icon="menu" /> Catégories
+                </button>
+                <div class="o_mk_home_search">
+                    <i class="oi" data-icon="search" />
+                    <input
+                        type="search"
+                        placeholder="Rechercher dans les connaissances…"
+                        t-att-value="this.state.query"
+                        t-on-input="(ev) => this.onSearchInput(ev)"
+                    />
+                </div>
+                <div t-if="this.state.searched" class="o_mk_home_results">
+                    <div
+                        t-if="!this.state.results.length"
+                        class="o_mk_home_empty"
+                    >Aucune page ne contient ces mots.</div>
+                    <ol t-else="">
+                        <t t-foreach="this.state.results" t-as="result" t-key="result.id">
+                            <li
+                                class="o_mk_home_result"
+                                t-on-click="() => this.open(result)"
+                            >
+                                <div class="o_mk_home_result_title">
+                                    <i class="oi" data-icon="description" />
+                                    <t t-out="result.name" />
+                                </div>
+                                <div class="o_mk_home_result_meta" t-if="result.category">
+                                    <t t-out="result.category" /> · <t t-out="result.date" />
+                                </div>
+                                <p class="o_mk_home_result_snippet" t-out="result.snippet" />
+                            </li>
+                        </t>
+                    </ol>
+                </div>
+                <t t-else="">
+                    <section class="o_mk_home_section" t-if="this.state.nodes.length">
+                        <h4>Catégories</h4>
+                        <div class="o_mk_home_cards">
+                            <t t-foreach="this.tree" t-as="cat" t-key="cat.id">
+                                <div class="o_mk_home_card" t-on-click="() => this.openNode(cat)">
+                                    <i
+                                        class="oi"
+                                        t-att-data-icon="cat.is_category ? 'folder_open' : 'description'"
+                                    />
+                                    <span class="o_mk_home_card_name" t-out="cat.name" />
+                                </div>
+                            </t>
+                        </div>
+                    </section>
+                    <section class="o_mk_home_section">
+                        <h4>Pages récentes</h4>
+                        <ol class="o_mk_home_recent">
+                            <t t-foreach="this.state.recent" t-as="page" t-key="page.id">
+                                <li t-on-click="() => this.open(page)">
+                                    <i class="oi" data-icon="description" />
+                                    <span class="o_mk_home_recent_name" t-out="page.name" />
+                                    <span class="o_mk_home_recent_meta" t-out="page.category" />
+                                </li>
+                            </t>
+                        </ol>
+                        <div
+                            t-if="!this.state.loading and !this.state.recent.length"
+                            class="o_mk_home_empty"
+                        >Aucune page récente.</div>
+                    </section>
+                </t>
+            </main>
+        </div>
+    </t>
+</templates>

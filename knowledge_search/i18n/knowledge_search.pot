@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_search
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 14:28+0000\n"
+"PO-Revision-Date: 2026-10-05 14:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.xml:0
+msgid "Accents and case are ignored; every word must appear."
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.model.fields,field_description:knowledge_search.field_document_page__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.model,name:knowledge_search.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.module.module,summary:base.module_knowledge_search
+msgid "Full-text wiki search: title and content, highlighted excerpts, Ctrl+K"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.model.fields,field_description:knowledge_search.field_document_page__id
+msgid "ID"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.module.module,shortdesc:base.module_knowledge_search
+msgid "Knowledge Search"
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.xml:0
+msgid "No page contains these words."
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.js:0
+msgid "No page found"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.ui.menu,name:knowledge_search.menu_wiki_search
+msgid "Search"
+msgstr ""
+
+#. module: knowledge_search
+#: model:ir.actions.client,name:knowledge_search.action_wiki_search
+msgid "Search the wiki"
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.js:0
+msgid "Search the wiki..."
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.xml:0
+msgid "Search titles and content of wiki pages…"
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.xml:0
+msgid "Tip: from anywhere, Ctrl+K (⌘K on Mac) then “?” searches the wiki."
+msgstr ""
+
+#. module: knowledge_search
+#. odoo-javascript
+#: code:addons/knowledge_search/static/src/js/wiki_search.js:0
+msgid "wiki pages"
+msgstr ""

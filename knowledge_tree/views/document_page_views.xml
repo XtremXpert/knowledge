@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- The tree itself is rendered beside the form (portal), see wiki_tree.js. -->
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_tree</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="knowledge_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="before">
+                <widget name="maison_wiki_tree" />
+            </div>
+        </field>
+    </record>
+</odoo>

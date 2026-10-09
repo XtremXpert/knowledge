@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_tree
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 14:14+0000\n"
+"PO-Revision-Date: 2026-10-05 14:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#. module: knowledge_tree
+#. odoo-python
+#: code:addons/knowledge_tree/models/document_page.py:0
+msgid "A category cannot be moved into itself."
+msgstr "Une catégorie ne peut pas être déplacée dans elle-même."
+
+#. module: knowledge_tree
+#: model:ir.model.fields,field_description:knowledge_tree.field_document_page__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: knowledge_tree
+#: model:ir.model,name:knowledge_tree.model_document_page
+msgid "Document Page"
+msgstr "Page de document"
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Filter pages"
+msgstr "Filtrer les pages"
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Hide the wiki tree"
+msgstr "Masquer l'arborescence"
+
+#. module: knowledge_tree
+#: model:ir.model.fields,field_description:knowledge_tree.field_document_page__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_tree
+#: model:ir.module.module,shortdesc:base.module_knowledge_tree
+msgid "Knowledge Tree"
+msgstr "Connaissances – Arborescence"
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "New page in this category"
+msgstr "Nouvelle page dans cette catégorie"
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "No page found."
+msgstr "Aucune page trouvée."
+
+#. module: knowledge_tree
+#. odoo-python
+#: code:addons/knowledge_tree/models/document_page.py:0
+msgid "Pages can only be moved into a category."
+msgstr "Les pages ne peuvent être déplacées que dans une catégorie."
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.xml:0
+msgid "Show the wiki tree"
+msgstr "Afficher l'arborescence"
+
+#. module: knowledge_tree
+#: model:ir.module.module,summary:base.module_knowledge_tree
+msgid "Wiki tree beside the page: categories and pages, drag and drop, quick add"
+msgstr "Arborescence du wiki à côté de la page : catégories et pages, glisser-déposer, ajout rapide"
+
+#. module: knowledge_tree
+#. odoo-javascript
+#: code:addons/knowledge_tree/static/src/js/wiki_tree.js:0
+msgid "Without category"
+msgstr "Sans catégorie"
