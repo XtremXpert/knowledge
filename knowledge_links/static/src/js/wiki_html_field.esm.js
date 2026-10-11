@@ -1,6 +1,6 @@
 import {HtmlField, htmlField} from "@html_editor/fields/html_field";
 import {registry} from "@web/core/registry";
-import {PageLinkPlugin} from "./page_link_plugin";
+import {PageLinkPlugin} from "./page_link_plugin.esm";
 
 /** Html field of wiki pages: adds links to other pages ("[[", "@", "/page"). */
 export class WikiHtmlField extends HtmlField {

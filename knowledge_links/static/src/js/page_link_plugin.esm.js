@@ -3,7 +3,7 @@ import {isContentEditable, isTextNode} from "@html_editor/utils/dom_info";
 import {_t} from "@web/core/l10n/translation";
 import {debounce} from "@web/core/utils/timing";
 import {proxy} from "@odoo/owl";
-import {PageLinkList} from "./page_link_list";
+import {PageLinkList} from "./page_link_list.esm";
 
 const MAX_TERM_LENGTH = 80;
 
