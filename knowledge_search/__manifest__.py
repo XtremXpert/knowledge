@@ -1,10 +1,11 @@
 {
     "name": "Knowledge Search",
     "summary": "Full-text wiki search: title and content, highlighted excerpts, Ctrl+K",
-    "author": "Benoit Vézina",
+    "author": "Benoit Vézina, Odoo Community Association (OCA)",
     "category": "Knowledge",
     "version": "20.0.1.0.0",
     "license": "AGPL-3",
+    "website": "https://github.com/OCA/knowledge",
     "depends": ["knowledge_page"],
     "data": [
         "views/search_views.xml",

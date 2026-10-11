@@ -8,9 +8,9 @@
                 t-on-click="() => this.toggleTree()"
             />
             <aside
+                t-if="!this.ui.isSmall or this.state.treeOpen"
                 class="o_mk_home_tree"
                 t-att-class="{ 'o_mk_home_tree_mobile': this.ui.isSmall }"
-                t-if="!this.ui.isSmall or this.state.treeOpen"
             >
                 <div class="o_mk_home_tree_head">
                     <span>Catégories</span>
@@ -43,7 +43,10 @@
                                     class="oi o_mk_home_icon"
                                     t-att-data-icon="row.node.is_category ? (this.isOpen(row.node) ? 'folder_open' : 'folder') : 'description'"
                                 />
-                                <span class="o_mk_home_tree_name" t-out="row.node.name" />
+                                <span
+                                    class="o_mk_home_tree_name"
+                                    t-out="row.node.name"
+                                />
                             </div>
                         </li>
                     </t>
@@ -76,7 +79,11 @@
                         class="o_mk_home_empty"
                     >Aucune page ne contient ces mots.</div>
                     <ol t-else="">
-                        <t t-foreach="this.state.results" t-as="result" t-key="result.id">
+                        <t
+                            t-foreach="this.state.results"
+                            t-as="result"
+                            t-key="result.id"
+                        >
                             <li
                                 class="o_mk_home_result"
                                 t-on-click="() => this.open(result)"
@@ -85,25 +92,39 @@
                                     <i class="oi" data-icon="description" />
                                     <t t-out="result.name" />
                                 </div>
-                                <div class="o_mk_home_result_meta" t-if="result.category">
-                                    <t t-out="result.category" /> · <t t-out="result.date" />
+                                <div
+                                    t-if="result.category"
+                                    class="o_mk_home_result_meta"
+                                >
+                                    <t t-out="result.category" /> · <t
+                                    t-out="result.date"
+                                />
                                 </div>
-                                <p class="o_mk_home_result_snippet" t-out="result.snippet" />
+                                <p
+                                    class="o_mk_home_result_snippet"
+                                    t-out="result.snippet"
+                                />
                             </li>
                         </t>
                     </ol>
                 </div>
                 <t t-else="">
-                    <section class="o_mk_home_section" t-if="this.state.nodes.length">
+                    <section t-if="this.state.nodes.length" class="o_mk_home_section">
                         <h4>Catégories</h4>
                         <div class="o_mk_home_cards">
                             <t t-foreach="this.tree" t-as="cat" t-key="cat.id">
-                                <div class="o_mk_home_card" t-on-click="() => this.openNode(cat)">
+                                <div
+                                    class="o_mk_home_card"
+                                    t-on-click="() => this.openNode(cat)"
+                                >
                                     <i
                                         class="oi"
                                         t-att-data-icon="cat.is_category ? 'folder_open' : 'description'"
                                     />
-                                    <span class="o_mk_home_card_name" t-out="cat.name" />
+                                    <span
+                                        class="o_mk_home_card_name"
+                                        t-out="cat.name"
+                                    />
                                 </div>
                             </t>
                         </div>
@@ -111,11 +132,21 @@
                     <section class="o_mk_home_section">
                         <h4>Pages récentes</h4>
                         <ol class="o_mk_home_recent">
-                            <t t-foreach="this.state.recent" t-as="page" t-key="page.id">
+                            <t
+                                t-foreach="this.state.recent"
+                                t-as="page"
+                                t-key="page.id"
+                            >
                                 <li t-on-click="() => this.open(page)">
                                     <i class="oi" data-icon="description" />
-                                    <span class="o_mk_home_recent_name" t-out="page.name" />
-                                    <span class="o_mk_home_recent_meta" t-out="page.category" />
+                                    <span
+                                        class="o_mk_home_recent_name"
+                                        t-out="page.name"
+                                    />
+                                    <span
+                                        class="o_mk_home_recent_meta"
+                                        t-out="page.category"
+                                    />
                                 </li>
                             </t>
                         </ol>

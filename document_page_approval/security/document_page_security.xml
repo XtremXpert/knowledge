@@ -25,14 +25,18 @@
         <field name="model_id" ref="document_page.model_document_page_history" />
         <field name="group_id" ref="document_knowledge.group_document_user" />
         <field name="operation">r</field>
-        <field name="domain">['|',('state','=','approved'),('create_uid','=',user.id)]</field>
+        <field
+            name="domain"
+        >['|',('state','=','approved'),('create_uid','=',user.id)]</field>
     </record>
     <record id="rule_change_request_editor" model="ir.access">
         <field name="name">Change Request Editor</field>
         <field name="model_id" ref="document_page.model_document_page_history" />
         <field name="group_id" ref="document_page.group_document_editor" />
         <field name="operation">cru</field>
-        <field name="domain">['|',('state','=','approved'),('create_uid','=',user.id)]</field>
+        <field
+            name="domain"
+        >['|',('state','=','approved'),('create_uid','=',user.id)]</field>
     </record>
     <record id="rule_change_request_approver" model="ir.access">
         <field name="name">Change Request Approver</field>

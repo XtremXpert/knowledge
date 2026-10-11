@@ -1,10 +1,11 @@
 {
     "name": "Knowledge Pages",
     "summary": "Document-style wiki pages: cover, cards, optional revision note",
-    "author": "Benoit Vézina",
+    "author": "Benoit Vézina, Odoo Community Association (OCA)",
     "category": "Knowledge",
     "version": "20.0.1.1.1",
     "license": "AGPL-3",
+    "website": "https://github.com/OCA/knowledge",
     "depends": ["document_page", "document_page_project"],
     "data": [
         "views/document_page_views.xml",

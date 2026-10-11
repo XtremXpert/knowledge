@@ -1,10 +1,10 @@
-import { Component, markup, onMounted, proxy, useProps } from "@odoo/owl";
-import { browser } from "@web/core/browser/browser";
-import { deserializeDateTime, formatDate } from "@web/core/l10n/dates";
-import { registry } from "@web/core/registry";
-import { debounce } from "@web/core/utils/timing";
-import { useService } from "@web/core/utils/hooks";
-import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
+import {Component, markup, onMounted, proxy, useProps} from "@odoo/owl";
+import {browser} from "@web/core/browser/browser";
+import {deserializeDateTime, formatDate} from "@web/core/l10n/dates";
+import {registry} from "@web/core/registry";
+import {debounce} from "@web/core/utils/timing";
+import {useService} from "@web/core/utils/hooks";
+import {standardActionServiceProps} from "@web/webclient/actions/action_plugin";
 
 const TREE_KEY = "knowledge_home_tree";
 
@@ -54,7 +54,7 @@ function toResult(page) {
  */
 export class KnowledgeHome extends Component {
     static template = "knowledge_home.Home";
-    props = useProps({ ...standardActionServiceProps });
+    props = useProps({...standardActionServiceProps});
 
     setup() {
         this.orm = useService("orm");
@@ -83,7 +83,7 @@ export class KnowledgeHome extends Component {
     }
 
     get tree() {
-        const nodes = this.state.nodes.map((node) => ({ ...node, children: [] }));
+        const nodes = this.state.nodes.map((node) => ({...node, children: []}));
         const byId = new Map(nodes.map((node) => [node.id, node]));
         const roots = [];
         for (const node of nodes) {
@@ -96,8 +96,7 @@ export class KnowledgeHome extends Component {
         }
         const sort = (list) => {
             list.sort(
-                (a, b) =>
-                    b.is_category - a.is_category || a.name.localeCompare(b.name)
+                (a, b) => b.is_category - a.is_category || a.name.localeCompare(b.name)
             );
             list.forEach((node) => sort(node.children));
         };
@@ -109,7 +108,7 @@ export class KnowledgeHome extends Component {
         const rows = [];
         const visit = (nodes, depth) => {
             for (const node of nodes) {
-                rows.push({ node, depth });
+                rows.push({node, depth});
                 if (node.is_category && this.isOpen(node)) {
                     visit(node.children, depth + 1);
                 }

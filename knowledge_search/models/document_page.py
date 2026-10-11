@@ -15,7 +15,9 @@ def fold(text):
     folded = []
     for char in text:
         base = "".join(
-            c for c in unicodedata.normalize("NFD", char) if not unicodedata.combining(c)
+            c
+            for c in unicodedata.normalize("NFD", char)
+            if not unicodedata.combining(c)
         )
         folded.append((base or char)[0].lower())
     return "".join(folded)
@@ -103,8 +105,4 @@ class DocumentPage(models.Model):
             space = text.rfind(" ", first, end)
             end = space if space > first else end
         excerpt = highlight(text[start:end], terms)
-        return (
-            ("…" if start > 0 else "")
-            + excerpt
-            + ("…" if end < len(text) else "")
-        )
+        return ("…" if start > 0 else "") + excerpt + ("…" if end < len(text) else "")

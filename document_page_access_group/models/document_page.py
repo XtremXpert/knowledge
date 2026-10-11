@@ -9,8 +9,8 @@ from odoo.exceptions import UserError
 class DocumentPage(models.Model):
     _inherit = "document.page"
 
-    groups_id = fields.Many2many(comodel_name="res.groups", string="Groups")
-    user_ids = fields.Many2many(comodel_name="res.users", string="Users")
+    groups_id = fields.Many2many(comodel_name="res.groups")
+    user_ids = fields.Many2many(comodel_name="res.users")
 
     @api.constrains("groups_id", "user_ids")
     def check_document_page_groups_users(self):
