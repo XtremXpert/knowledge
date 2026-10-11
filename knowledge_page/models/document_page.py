@@ -24,7 +24,9 @@ class DocumentPage(models.Model):
     def _compute_content_excerpt(self):
         for rec in self:
             text = " ".join(
-                html2plaintext(rec.history_head.content or "", include_references=False).split()
+                html2plaintext(
+                    rec.history_head.content or "", include_references=False
+                ).split()
             )
             rec.content_excerpt = text[:157] + "…" if len(text) > 160 else text
 

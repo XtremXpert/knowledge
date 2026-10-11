@@ -3,7 +3,10 @@
     <t t-name="knowledge_tree.WikiTree">
         <t t-if="!this.ui.isSmall and !this.env.inDialog">
             <t t-custom-portal="'.o_action_manager .o_form_view .o_content'">
-                <aside class="o_mk_tree" t-att-class="{ 'o_mk_tree_hidden': this.state.hidden }">
+                <aside
+                    class="o_mk_tree"
+                    t-att-class="{ 'o_mk_tree_hidden': this.state.hidden }"
+                >
                     <t t-if="this.state.hidden">
                         <button
                             class="btn btn-link o_mk_tree_toggle"
@@ -61,7 +64,10 @@
                                             class="oi o_mk_tree_icon"
                                             t-att-data-icon="node.isCategory ? (this.isOpen(node) ? 'folder_open' : 'folder') : 'description'"
                                         />
-                                        <span class="o_mk_tree_name text-truncate" t-out="node.name" />
+                                        <span
+                                            class="o_mk_tree_name text-truncate"
+                                            t-out="node.name"
+                                        />
                                         <button
                                             t-if="node.isCategory"
                                             class="btn btn-link o_mk_tree_add"

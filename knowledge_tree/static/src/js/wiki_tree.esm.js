@@ -1,27 +1,24 @@
-import { Component, proxy, t, untrack, useEffect, useProps } from "@odoo/owl";
-import { browser } from "@web/core/browser/browser";
-import { _t } from "@web/core/l10n/translation";
-import { registry } from "@web/core/registry";
-import { useService } from "@web/core/utils/hooks";
-import { standardWidgetProps } from "@web/views/widgets/standard_widget_props";
+import {Component, proxy, t, untrack, useEffect, useProps} from "@odoo/owl";
+import {browser} from "@web/core/browser/browser";
+import {_t} from "@web/core/l10n/translation";
+import {registry} from "@web/core/registry";
+import {useService} from "@web/core/utils/hooks";
+import {standardWidgetProps} from "@web/views/widgets/standard_widget_props";
 
 const STORAGE_KEY = "knowledge_tree";
 
 function loadPrefs() {
     try {
         const prefs = JSON.parse(browser.localStorage.getItem(STORAGE_KEY) || "{}");
-        return { expanded: prefs.expanded || [], hidden: Boolean(prefs.hidden) };
+        return {expanded: prefs.expanded || [], hidden: Boolean(prefs.hidden)};
     } catch {
-        return { expanded: [], hidden: false };
+        return {expanded: [], hidden: false};
     }
 }
 
 /** Lowercase, without accents: "Été" matches "ete". */
 function normalize(text) {
-    return (text || "")
-        .normalize("NFD")
-        .replace(/[̀-ͯ]/g, "")
-        .toLowerCase();
+    return (text || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 }
 
 /**
@@ -62,7 +59,11 @@ export class WikiTree extends Component {
     }
 
     async load(resId) {
-        this.state.nodes = await this.orm.call("document.page", "maison_tree_nodes", []);
+        this.state.nodes = await this.orm.call(
+            "document.page",
+            "maison_tree_nodes",
+            []
+        );
         this.state.loaded = true;
         this.expandAncestors(resId);
     }
@@ -71,7 +72,10 @@ export class WikiTree extends Component {
         try {
             browser.localStorage.setItem(
                 STORAGE_KEY,
-                JSON.stringify({ expanded: this.state.expanded, hidden: this.state.hidden })
+                JSON.stringify({
+                    expanded: this.state.expanded,
+                    hidden: this.state.hidden,
+                })
             );
         } catch {
             // Private browsing or blocked storage: the tree still works.
@@ -147,10 +151,12 @@ export class WikiTree extends Component {
             list
                 .map((node) => {
                     if (normalize(node.name).includes(filter)) {
-                        return { ...node, forceOpen: true };
+                        return {...node, forceOpen: true};
                     }
                     const children = keep(node.children);
-                    return children.length ? { ...node, children, forceOpen: true } : null;
+                    return children.length
+                        ? {...node, children, forceOpen: true}
+                        : null;
                 })
                 .filter(Boolean);
         return keep(roots);
@@ -161,7 +167,7 @@ export class WikiTree extends Component {
         const rows = [];
         const visit = (nodes, depth) => {
             for (const node of nodes) {
-                rows.push({ node, depth });
+                rows.push({node, depth});
                 if (node.isCategory && this.isOpen(node)) {
                     visit(node.children, depth + 1);
                 }
@@ -172,7 +178,9 @@ export class WikiTree extends Component {
     }
 
     isOpen(node) {
-        return node.forceOpen || node.isVirtual || this.state.expanded.includes(node.id);
+        return (
+            node.forceOpen || node.isVirtual || this.state.expanded.includes(node.id)
+        );
     }
 
     toggle(node) {
@@ -211,7 +219,7 @@ export class WikiTree extends Component {
         if ((await model.root.isDirty()) && !(await model.root.save())) {
             return;
         }
-        await model.load({ resId: node.id, resIds: [node.id] });
+        await model.load({resId: node.id, resIds: [node.id]});
         this.env.config.setDisplayName?.(this.props.record.model.root.data.name);
     }
 
@@ -239,7 +247,9 @@ export class WikiTree extends Component {
     }
 
     canDrop(node) {
-        return node.isCategory && !node.isVirtual && this.dragId && this.dragId !== node.id;
+        return (
+            node.isCategory && !node.isVirtual && this.dragId && this.dragId !== node.id
+        );
     }
 
     onDragOver(ev, node) {
@@ -271,11 +281,14 @@ export class WikiTree extends Component {
         if (dragId === this.currentId) {
             // The current page: go through the form, which keeps unsaved edits.
             const record = this.props.record.model.root;
-            await record.update({ parent_id: { id: node.id, display_name: node.name } });
+            await record.update({parent_id: {id: node.id, display_name: node.name}});
             await record.save();
         } else {
             try {
-                await this.orm.call("document.page", "maison_tree_move", [[dragId], node.id]);
+                await this.orm.call("document.page", "maison_tree_move", [
+                    [dragId],
+                    node.id,
+                ]);
             } finally {
                 await this.load(this.currentId);
             }

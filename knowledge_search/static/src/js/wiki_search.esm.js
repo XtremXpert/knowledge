@@ -1,10 +1,10 @@
-import { Component, markup, onMounted, proxy, signal, useProps } from "@odoo/owl";
-import { _t } from "@web/core/l10n/translation";
-import { registry } from "@web/core/registry";
-import { useService } from "@web/core/utils/hooks";
-import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
-import { debounce } from "@web/core/utils/timing";
-import { deserializeDateTime, formatDate } from "@web/core/l10n/dates";
+import {Component, markup, onMounted, proxy, signal, useProps} from "@odoo/owl";
+import {_t} from "@web/core/l10n/translation";
+import {registry} from "@web/core/registry";
+import {useService} from "@web/core/utils/hooks";
+import {standardActionServiceProps} from "@web/webclient/actions/action_plugin";
+import {debounce} from "@web/core/utils/timing";
+import {deserializeDateTime, formatDate} from "@web/core/l10n/dates";
 
 /** Opens a wiki page in its form view. */
 export function openPage(action, id) {
@@ -22,22 +22,20 @@ export function toResult(page) {
         ...page,
         name: markup(page.name),
         snippet: markup(page.snippet),
-        date: page.write_date
-            ? formatDate(deserializeDateTime(page.write_date))
-            : "",
+        date: page.write_date ? formatDate(deserializeDateTime(page.write_date)) : "",
     };
 }
 
 /** "Search" menu of the wiki: one box, results with highlighted excerpts. */
 export class WikiSearch extends Component {
     static template = "knowledge_search.WikiSearch";
-    props = useProps({ ...standardActionServiceProps });
+    props = useProps({...standardActionServiceProps});
 
     setup() {
         this.orm = useService("orm");
         this.action = useService("action");
         this.inputRef = signal.ref();
-        this.state = proxy({ query: "", results: [], searched: false, loading: false });
+        this.state = proxy({query: "", results: [], searched: false, loading: false});
         this.requestId = 0;
         this.search = debounce(this._search.bind(this), 250);
         onMounted(() => this.inputRef()?.focus());

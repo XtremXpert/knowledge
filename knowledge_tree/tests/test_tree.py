@@ -21,12 +21,18 @@ class TestWikiTree(TransactionCase):
         self.assertEqual(nodes[self.heating.id]["parent_id"], self.home.id)
         self.assertEqual(
             nodes[self.boiler.id],
-            {"id": self.boiler.id, "name": "Boiler", "type": "content",
-             "parent_id": self.heating.id},
+            {
+                "id": self.boiler.id,
+                "name": "Boiler",
+                "type": "content",
+                "parent_id": self.heating.id,
+            },
         )
 
     def test_move_page_into_category(self):
-        kitchen = self.env["document.page"].create({"name": "Kitchen", "type": "category"})
+        kitchen = self.env["document.page"].create(
+            {"name": "Kitchen", "type": "category"}
+        )
         self.boiler.maison_tree_move(kitchen.id)
         self.assertEqual(self.boiler.parent_id, kitchen)
 

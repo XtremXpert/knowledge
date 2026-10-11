@@ -170,7 +170,9 @@
         border-radius: 0.375rem;
         color: $gray-600;
         opacity: 0.7;
-        transition: opacity 0.15s, background-color 0.15s;
+        transition:
+            opacity 0.15s,
+            background-color 0.15s;
 
         &:hover {
             opacity: 1;
@@ -234,7 +236,9 @@
     .o_mk_card {
         overflow: hidden;
         border-radius: 0.5rem;
-        transition: box-shadow 0.15s, transform 0.15s;
+        transition:
+            box-shadow 0.15s,
+            transform 0.15s;
 
         &:hover {
             transform: translateY(-2px);

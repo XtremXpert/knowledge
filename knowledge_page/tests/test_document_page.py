@@ -39,12 +39,14 @@ class TestDocumentPage(TransactionCase):
             form.revision_note = "Too early"
 
     def test_note_becomes_summary(self):
-        page = self.env["document.page"].create({
-            "name": "Pizza dough",
-            "parent_id": self.category.id,
-            "content": "<p>Flour, water, salt.</p>",
-            "revision_note": "Grandma's version",
-        })
+        page = self.env["document.page"].create(
+            {
+                "name": "Pizza dough",
+                "parent_id": self.category.id,
+                "content": "<p>Flour, water, salt.</p>",
+                "revision_note": "Grandma's version",
+            }
+        )
         self.assertEqual(page.history_head.summary, "Grandma's version")
         with Form(page) as form:
             form.content = "<p>With yeast.</p>"
@@ -91,10 +93,12 @@ class TestDocumentPage(TransactionCase):
         self.assertEqual(page.history_head.summary, "Création")
 
     def test_excerpt_skips_link_references(self):
-        page = self.env["document.page"].create({
-            "name": "Menu",
-            "parent_id": self.category.id,
-            "content": '<p>See <a href="/odoo/document_pages/1">dough</a>.</p>',
-        })
+        page = self.env["document.page"].create(
+            {
+                "name": "Menu",
+                "parent_id": self.category.id,
+                "content": '<p>See <a href="/odoo/document_pages/1">dough</a>.</p>',
+            }
+        )
         self.assertIn("See dough", page.content_excerpt)
         self.assertNotIn("[1]", page.content_excerpt)

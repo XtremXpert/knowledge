@@ -6,14 +6,17 @@
         <field name="name">document.page.form - knowledge_page</field>
         <field name="model">document.page</field>
         <field name="inherit_id" ref="document_page.view_wiki_form" />
-        <field name="priority">99</field>
+        <field name="priority" eval="99" />
         <field name="arch" type="xml">
             <form position="attributes">
                 <attribute name="class">o_mk_wiki_form</attribute>
             </form>
             <xpath expr="//div[hasclass('oe_title')]" position="before">
                 <div class="o_mk_cover_wrap" name="cover_wrap">
-                    <span class="o_mk_cover_hint" invisible="image"><i class="oi" data-icon="image" /> Add a cover</span>
+                    <span class="o_mk_cover_hint" invisible="image"><i
+                        class="oi"
+                        data-icon="image"
+                    /> Add a cover</span>
                 </div>
             </xpath>
             <xpath expr="//div[@name='cover_wrap']/span" position="before">

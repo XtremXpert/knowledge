@@ -7,7 +7,8 @@
         <field name="tag">knowledge_home.home</field>
         <field name="path">knowledge-home</field>
     </record>
-    <menuitem id="menu_knowledge_home"
+    <menuitem
+        id="menu_knowledge_home"
         name="Accueil"
         parent="document_knowledge.menu_document_root"
         action="action_knowledge_home"

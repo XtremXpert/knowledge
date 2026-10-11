@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_links</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="knowledge_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_open_backlinks"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="link"
+                    invisible="not backlink_count"
+                >
+                    <field
+                        name="backlink_count"
+                        string="Linked from"
+                        widget="statinfo"
+                    />
+                </button>
+            </div>
+            <field name="content" position="attributes">
+                <attribute name="widget">maison_wiki_html</attribute>
+                <attribute
+                    name="placeholder"
+                >Start writing… (“/” for headings, lists, tables, images; “[[” or “@” to link a page)</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

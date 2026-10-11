@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- New page: template cards between the title area and the editor. -->
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_templates</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="knowledge_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <field name="content" position="before">
+                <field
+                    name="page_template_id"
+                    widget="knowledge_template_picker"
+                    nolabel="1"
+                    invisible="id"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="action_save_as_template" model="ir.actions.server">
+        <field name="name">Save as template</field>
+        <field name="model_id" ref="document_page.model_document_page" />
+        <field name="binding_model_id" ref="document_page.model_document_page" />
+        <field name="binding_view_types">form</field>
+        <field
+            name="group_ids"
+            eval="[(4, ref('document_page.group_document_editor'))]"
+        />
+        <field name="state">code</field>
+        <field name="code">action = record.action_save_as_template()</field>
+    </record>
+</odoo>

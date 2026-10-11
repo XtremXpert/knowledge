@@ -1,0 +1,38 @@
+// Links between wiki pages, inserted with "[[", "@" or "/page".
+.o_mk_wiki_form a.o_mk_page_link {
+    padding: 0 0.15em;
+    border-radius: 0.25rem;
+    background-color: rgba($primary, 0.08);
+    text-decoration: none;
+
+    &:hover {
+        background-color: rgba($primary, 0.16);
+    }
+}
+
+// Bootstrap caps popovers at 276px: let the page list be wider.
+.popover:has(.o_mk_page_link_list) {
+    max-width: none;
+}
+
+.o_mk_page_link_list {
+    width: 24rem;
+    max-width: 90vw;
+
+    .o-navigable {
+        min-width: 0;
+    }
+
+    .oi {
+        color: $gray-600;
+    }
+
+    .o_mk_page_link_create {
+        border-top: 1px solid $border-color;
+        color: $primary;
+
+        .oi {
+            color: $primary;
+        }
+    }
+}

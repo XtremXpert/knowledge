@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="knowledge_links.PageLinkList">
+        <div
+            class="o-we-SuggestionList o_mk_page_link_list user-select-none"
+            t-ref="this.suggestionListRef"
+        >
+            <t t-foreach="this.props.state.list" t-as="item" t-key="item.value">
+                <div
+                    class="d-flex align-items-center gap-2 py-1 px-2 w-100 cursor-pointer o-navigable"
+                    t-att-class="{ 'o_mk_page_link_create': item.isCreate }"
+                    t-on-click.stop="() => this.onClick(item)"
+                >
+                    <i class="oi" t-att-data-icon="item.icon" />
+                    <span class="text-truncate" t-out="item.label" />
+                    <small
+                        t-if="item.description"
+                        class="ms-auto ps-2 text-muted text-truncate"
+                        t-out="item.description"
+                    />
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

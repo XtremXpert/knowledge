@@ -1,10 +1,11 @@
 {
     "name": "Knowledge Home",
-    "summary": "Knowledge landing page: category tree with pages, categories, recent pages, search",
-    "author": "Benoit Vézina",
+    "summary": "Knowledge landing page: category tree, recent pages and search",
+    "author": "Benoit Vézina, Odoo Community Association (OCA)",
     "category": "Knowledge",
     "version": "20.0.1.0.0",
     "license": "AGPL-3",
+    "website": "https://github.com/OCA/knowledge",
     "depends": [
         "document_knowledge",
         "knowledge_page",

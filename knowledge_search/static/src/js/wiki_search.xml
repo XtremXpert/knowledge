@@ -13,14 +13,15 @@
                     t-on-keydown="(ev) => this.onKeydown(ev)"
                 />
             </div>
-            <div class="o_mk_search_hint" t-if="!this.state.searched">
+            <div t-if="!this.state.searched" class="o_mk_search_hint">
                 <p>Accents and case are ignored; every word must appear.</p>
-                <p>Tip: from anywhere, Ctrl+K (⌘K on Mac) then “?” searches the wiki.</p>
+                <p
+                >Tip: from anywhere, Ctrl+K (⌘K on Mac) then “?” searches the wiki.</p>
             </div>
-            <div class="o_mk_search_hint" t-elif="!this.state.results.length">
+            <div t-elif="!this.state.results.length" class="o_mk_search_hint">
                 No page contains these words.
             </div>
-            <ol class="o_mk_search_results" t-else="">
+            <ol t-else="" class="o_mk_search_results">
                 <t t-foreach="this.state.results" t-as="result" t-key="result.id">
                     <li class="o_mk_search_result" t-on-click="() => this.open(result)">
                         <div class="o_mk_search_title">
@@ -29,7 +30,8 @@
                         </div>
                         <div class="o_mk_search_meta">
                             <span t-if="result.category">
-                                <i class="oi" data-icon="folder" /> <t t-out="result.category" />
+                                <i class="oi" data-icon="folder" />
+                                <t t-out="result.category" />
                             </span>
                             <span t-out="result.date" />
                         </div>

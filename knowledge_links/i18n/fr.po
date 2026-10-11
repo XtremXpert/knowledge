@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_links
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 13:53+0000\n"
+"PO-Revision-Date: 2026-10-05 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: knowledge_links
+#. odoo-python
+#: code:addons/knowledge_links/models/document_page.py:0
+msgid "A page title is required."
+msgstr "Un titre de page est requis."
+
+#. module: knowledge_links
+#: model:ir.model.fields,field_description:knowledge_links.field_document_page__backlink_count
+msgid "Backlink Count"
+msgstr "Nombre de liens entrants"
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "Create “%s”"
+msgstr "Créer « %s »"
+
+#. module: knowledge_links
+#: model:ir.model.fields,field_description:knowledge_links.field_document_page__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: knowledge_links
+#: model:ir.model,name:knowledge_links.model_document_page
+msgid "Document Page"
+msgstr "Page de document"
+
+#. module: knowledge_links
+#: model:ir.model.fields,field_description:knowledge_links.field_document_page__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "Link to a page"
+msgstr "Lien vers une page"
+
+#. module: knowledge_links
+#: model:ir.model.fields,field_description:knowledge_links.field_document_page__backlink_ids
+#: model_terms:ir.ui.view,arch_db:knowledge_links.view_wiki_form
+msgid "Linked from"
+msgstr "Liens entrants"
+
+#. module: knowledge_links
+#. odoo-python
+#: code:addons/knowledge_links/models/document_page.py:0
+msgid "Linked from %s"
+msgstr "Liens vers %s"
+
+#. module: knowledge_links
+#: model:ir.module.module,summary:base.module_knowledge_links
+msgid "Links between wiki pages (\"[[\", \"@\", \"/page\") and backlinks"
+msgstr "Liens entre pages wiki (« [[ », « @ », « /page ») et liens entrants"
+
+#. module: knowledge_links
+#: model:ir.module.module,shortdesc:base.module_knowledge_links
+msgid "Knowledge Links"
+msgstr "Connaissances – Liens"
+
+#. module: knowledge_links
+#: model:ir.model.fields,help:knowledge_links.field_document_page__backlink_ids
+msgid "Pages whose current version links to this page."
+msgstr "Pages dont la version actuelle contient un lien vers cette page."
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "Search a wiki page and link to it"
+msgstr "Chercher une page du wiki et y faire un lien"
+
+#. module: knowledge_links
+#: model_terms:ir.ui.view,arch_db:knowledge_links.view_wiki_form
+msgid ""
+"Start writing… (“/” for headings, lists, tables, images; “[[” or “@” to link "
+"a page)"
+msgstr ""
+"Commencez à écrire… (« / » pour titres, listes, tableaux, images ; « [[ » ou "
+"« @ » pour un lien vers une page)"
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "mention"
+msgstr "mention"
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "page"
+msgstr "page"
+
+#. module: knowledge_links
+#. odoo-javascript
+#: code:addons/knowledge_links/static/src/js/page_link_plugin.js:0
+msgid "wiki"
+msgstr "wiki"

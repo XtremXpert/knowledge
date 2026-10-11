@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="template_procedure" model="knowledge.page.template">
+        <field name="name">Procedure</field>
+        <field name="sequence" eval="10" />
+        <field name="icon">checklist</field>
+        <field name="description">Steps to follow, materials, precautions</field>
+        <field name="content" type="html">
+            <h2>Purpose</h2>
+            <p>What this procedure is for, in one sentence.</p>
+            <h2>When</h2>
+            <p>Frequency or trigger (e.g. every autumn, after a power outage).</p>
+            <h2>Materials</h2>
+            <ul>
+                <li>Tool or product</li>
+            </ul>
+            <h2>Steps</h2>
+            <ol>
+                <li>First step</li>
+                <li>Second step</li>
+            </ol>
+            <h2>Precautions</h2>
+            <p>Safety notes, what not to do.</p>
+        </field>
+    </record>
+
+    <record id="template_equipment" model="knowledge.page.template">
+        <field name="name">Equipment sheet</field>
+        <field name="sequence" eval="20" />
+        <field name="icon">build</field>
+        <field name="description">Model, serial number, warranty, maintenance</field>
+        <field name="content" type="html">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Brand and model</strong>
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Serial number</strong>
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Purchase date</strong>
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Supplier</strong>
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Warranty until</strong>
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Maintenance</h2>
+            <ul class="o_checklist">
+                <li>Yearly check</li>
+                <li>Filter or part to replace</li>
+            </ul>
+            <h2>Manuals and documents</h2>
+            <p>Links to the manual, invoice, warranty.</p>
+            <h2>History</h2>
+            <p>Repairs and interventions, with dates.</p>
+        </field>
+    </record>
+
+    <record id="template_recipe" model="knowledge.page.template">
+        <field name="name">Recipe</field>
+        <field name="sequence" eval="30" />
+        <field name="icon">restaurant</field>
+        <field name="description">Ingredients, steps, cooking times</field>
+        <field name="content" type="html">
+            <p><strong>Servings:</strong> 4 · <strong
+            >Preparation:</strong> 15 min · <strong>Cooking:</strong> 30 min</p>
+            <h2>Ingredients</h2>
+            <ul>
+                <li>Ingredient and quantity</li>
+            </ul>
+            <h2>Steps</h2>
+            <ol>
+                <li>First step</li>
+                <li>Second step</li>
+            </ol>
+            <h2>Notes</h2>
+            <p>Variations, tips, what to serve with it.</p>
+        </field>
+    </record>
+
+    <record id="template_meeting" model="knowledge.page.template">
+        <field name="name">Meeting notes</field>
+        <field name="sequence" eval="40" />
+        <field name="icon">groups</field>
+        <field name="description">Participants, decisions, actions</field>
+        <field name="content" type="html">
+            <p>
+                <strong>Date:</strong>
+                <br />
+            </p>
+            <p>
+                <strong>Participants:</strong>
+                <br />
+            </p>
+            <h2>Agenda</h2>
+            <ul>
+                <li>Topic</li>
+            </ul>
+            <h2>Decisions</h2>
+            <ul>
+                <li>Decision</li>
+            </ul>
+            <h2>Actions</h2>
+            <ul class="o_checklist">
+                <li>Who does what, by when</li>
+            </ul>
+        </field>
+    </record>
+</odoo>

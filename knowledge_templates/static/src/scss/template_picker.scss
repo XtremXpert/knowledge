@@ -1,0 +1,48 @@
+// Template cards above the editor of a new page.
+.o_mk_templates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.25rem 0 1.25rem;
+}
+
+.o_mk_template_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    width: 10.5rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid $border-color;
+    border-radius: 0.6rem;
+    background-color: $o-view-background-color;
+    color: $gray-800;
+    text-align: left;
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s;
+
+    &:hover {
+        border-color: $primary;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    &.o_mk_template_selected {
+        border-color: $primary;
+        background-color: rgba($primary, 0.06);
+    }
+
+    .oi {
+        color: $primary;
+        font-size: 1.4rem;
+    }
+
+    .o_mk_template_name {
+        font-weight: 600;
+    }
+
+    .o_mk_template_desc {
+        color: $gray-600;
+        line-height: 1.3;
+    }
+}

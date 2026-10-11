@@ -4,7 +4,7 @@
     <record id="view_wiki_kanban" model="ir.ui.view">
         <field name="name">document.page.kanban - knowledge_page</field>
         <field name="model">document.page</field>
-        <field name="priority">1</field>
+        <field name="priority" eval="1" />
         <field name="arch" type="xml">
             <kanban
                 js_class="document_page_kanban_view"
@@ -40,21 +40,27 @@
                                 <i class="oi" data-icon="description" />
                                 <field name="page_count" /> pages
                             </div>
-                            <div t-elif="record.parent_id.raw_value" class="o_mk_card_meta">
+                            <div
+                                t-elif="record.parent_id.raw_value"
+                                class="o_mk_card_meta"
+                            >
                                 <i class="oi" data-icon="folder_open" />
                                 <field name="parent_id" />
                             </div>
                             <field
-                                name="content_excerpt"
-                                class="o_mk_card_excerpt"
                                 t-if="record.type.raw_value === 'content'"
+                                class="o_mk_card_excerpt"
+                                name="content_excerpt"
                             />
                             <footer
                                 t-if="record.type.raw_value === 'content'"
                                 class="o_mk_card_footer"
                             >
                                 <field name="write_date" widget="date" />
-                                <field name="content_uid" widget="many2one_avatar_user" />
+                                <field
+                                    name="content_uid"
+                                    widget="many2one_avatar_user"
+                                />
                             </footer>
                         </div>
                         <!-- Clicking a category opens its pages (OCA controller). -->

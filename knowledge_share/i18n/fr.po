@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_share
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 18:18+0000\n"
+"PO-Revision-Date: 2026-10-05 18:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/models/document_page.py:0
+msgid "A new public link replaces the previous one."
+msgstr "Un nouveau lien public remplace le précédent."
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid ""
+"Anyone with the link will be able to read this page (and its images),\n"
+"                        without an account. They cannot edit it nor see the other pages."
+msgstr ""
+"Toute personne ayant le lien pourra lire cette page (et ses images), sans "
+"compte. Elle ne pourra ni la modifier ni voir les autres pages."
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Create the link"
+msgstr "Créer le lien"
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: knowledge_share
+#: model:ir.model,name:knowledge_share.model_document_page
+msgid "Document Page"
+msgstr "Page de document"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Download as PDF"
+msgstr "Télécharger en PDF"
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_share
+#: model:ir.module.module,shortdesc:base.module_knowledge_share
+msgid "Knowledge Share"
+msgstr "Connaissances – Partage"
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_expiration
+msgid "Link expires on"
+msgstr "Le lien expire le"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Never"
+msgstr "Jamais"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "New link"
+msgstr "Nouveau lien"
+
+#. module: knowledge_share
+#: model:ir.model.fields,help:knowledge_share.field_document_page__share_expiration
+msgid "Optional: after this date the link no longer works."
+msgstr "Facultatif : après cette date, le lien ne fonctionne plus."
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_url
+msgid "Public link"
+msgstr "Lien public"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Save and close"
+msgstr "Enregistrer et fermer"
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_token
+msgid "Share Token"
+msgstr "Jeton de partage"
+
+#. module: knowledge_share
+#: model:ir.module.module,summary:base.module_knowledge_share
+msgid "Share a wiki page with a public read-only link, download it as PDF"
+msgstr ""
+"Partager une page du wiki par un lien public en lecture seule, la "
+"télécharger en PDF"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/models/document_page.py:0
+msgid "Share the page"
+msgstr "Partager la page"
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_active
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_wiki_form
+msgid "Shared"
+msgstr "Partagée"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Shared read-only from the household wiki."
+msgstr "Partagé en lecture seule depuis le wiki de la maison."
+
+#. module: knowledge_share
+#: model:ir.actions.server,name:knowledge_share.action_share_page
+msgid "Share…"
+msgstr "Partager…"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Stop sharing"
+msgstr "Arrêter le partage"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "The current link will stop working. Continue?"
+msgstr "Le lien actuel ne fonctionnera plus. Continuer ?"
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "This page can be read by anyone who has this link:"
+msgstr "Toute personne ayant ce lien peut lire cette page :"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Updated on"
+msgstr "Mise à jour le"
