@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- PDF of a page: category and last update under the title. -->
+    <template
+        id="report_documentpage_doc"
+        inherit_id="document_page.report_documentpage_doc"
+    >
+        <h1 position="after">
+            <p class="text-muted">
+                <t t-if="doc.parent_id"><t t-out="doc.parent_id.name" /> · </t>
+                <t t-out="doc.content_date" t-options="{'widget': 'date'}" />
+            </p>
+        </h1>
+    </template>
+</odoo>

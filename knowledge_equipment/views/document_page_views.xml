@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Chip next to category and project, under the title. -->
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_equipment</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="knowledge_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <div name="chip_projet" position="after">
+                <div class="o_mk_chip" name="chip_equipment" title="Equipment">
+                    <i class="oi" data-icon="build" />
+                    <field
+                        name="equipment_ids"
+                        widget="many2many_tags"
+                        placeholder="Equipment (optional)"
+                        options="{'no_create': True}"
+                    />
+                </div>
+            </div>
+        </field>
+    </record>
+
+    <record id="view_wiki_filter" model="ir.ui.view">
+        <field name="name">document.page.search - knowledge_equipment</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page.view_wiki_filter" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="equipment_ids" />
+            </field>
+            <!-- Inside OCA's group: at the root of the view, this filter made the pages kanban crash. -->
+            <filter name="group_by_category" position="after">
+                <filter
+                    name="group_by_equipment"
+                    string="Equipment"
+                    context="{'group_by': 'equipment_ids'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>

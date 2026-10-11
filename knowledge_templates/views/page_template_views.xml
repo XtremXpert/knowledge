@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_page_template_list" model="ir.ui.view">
+        <field name="name">knowledge.page.template.list</field>
+        <field name="model">knowledge.page.template</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="description" />
+                <field name="category_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_page_template_form" model="ir.ui.view">
+        <field name="name">knowledge.page.template.form</field>
+        <field name="model">knowledge.page.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <field name="active" invisible="1" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. Procedure" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="description" />
+                            <field name="category_id" />
+                        </group>
+                        <group>
+                            <field name="icon" />
+                            <field name="sequence" />
+                        </group>
+                    </group>
+                    <field name="content" widget="html" options="{'codeview': True}" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_page_template" model="ir.actions.act_window">
+        <field name="name">Page templates</field>
+        <field name="res_model">knowledge.page.template</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_page_template"
+        name="Page templates"
+        parent="document_page.menu_wiki"
+        action="action_page_template"
+        groups="document_page.group_document_editor"
+        sequence="30"
+    />
+</odoo>

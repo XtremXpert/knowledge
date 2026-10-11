@@ -1,0 +1,144 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_share
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 18:18+0000\n"
+"PO-Revision-Date: 2026-10-05 18:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/models/document_page.py:0
+msgid "A new public link replaces the previous one."
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid ""
+"Anyone with the link will be able to read this page (and its images),\n"
+"                        without an account. They cannot edit it nor see the other pages."
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Create the link"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model,name:knowledge_share.model_document_page
+msgid "Document Page"
+msgstr ""
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Download as PDF"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__id
+msgid "ID"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.module.module,shortdesc:base.module_knowledge_share
+msgid "Knowledge Share"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_expiration
+msgid "Link expires on"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Never"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "New link"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,help:knowledge_share.field_document_page__share_expiration
+msgid "Optional: after this date the link no longer works."
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_url
+msgid "Public link"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Save and close"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_token
+msgid "Share Token"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.module.module,summary:base.module_knowledge_share
+msgid "Share a wiki page with a public read-only link, download it as PDF"
+msgstr ""
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/models/document_page.py:0
+msgid "Share the page"
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.model.fields,field_description:knowledge_share.field_document_page__share_active
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_wiki_form
+msgid "Shared"
+msgstr ""
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Shared read-only from the household wiki."
+msgstr ""
+
+#. module: knowledge_share
+#: model:ir.actions.server,name:knowledge_share.action_share_page
+msgid "Share…"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "Stop sharing"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "The current link will stop working. Continue?"
+msgstr ""
+
+#. module: knowledge_share
+#: model_terms:ir.ui.view,arch_db:knowledge_share.view_share_dialog
+msgid "This page can be read by anyone who has this link:"
+msgstr ""
+
+#. module: knowledge_share
+#. odoo-python
+#: code:addons/knowledge_share/controllers/main.py:0
+msgid "Updated on"
+msgstr ""

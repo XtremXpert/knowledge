@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- "Shared" button on shared pages; opens the share dialog. -->
+    <record id="view_wiki_form" model="ir.ui.view">
+        <field name="name">document.page.form - knowledge_share</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="knowledge_page.view_wiki_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="share_active" invisible="1" />
+                <button
+                    name="action_share_dialog"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="public"
+                    invisible="not share_active"
+                    string="Shared"
+                />
+            </div>
+        </field>
+    </record>
+
+    <record id="view_share_dialog" model="ir.ui.view">
+        <field name="name">document.page.share.dialog</field>
+        <field name="model">document.page</field>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <form>
+                <field name="share_active" invisible="1" />
+                <div invisible="share_active">
+                    <p>
+                        Anyone with the link will be able to read this page (and its images),
+                        without an account. They cannot edit it nor see the other pages.
+                    </p>
+                </div>
+                <div invisible="not share_active">
+                    <p>This page can be read by anyone who has this link:</p>
+                    <field name="share_url" widget="CopyClipboardChar" readonly="1" />
+                </div>
+                <group>
+                    <field name="share_expiration" placeholder="Never" />
+                </group>
+                <footer>
+                    <button
+                        name="action_share_enable"
+                        type="object"
+                        string="Create the link"
+                        class="btn-primary"
+                        invisible="share_active"
+                    />
+                    <button
+                        name="action_share_renew"
+                        type="object"
+                        string="New link"
+                        invisible="not share_active"
+                        confirm="The current link will stop working. Continue?"
+                    />
+                    <button
+                        name="action_share_disable"
+                        type="object"
+                        string="Stop sharing"
+                        class="btn-outline-danger"
+                        invisible="not share_active"
+                    />
+                    <button
+                        special="save"
+                        string="Save and close"
+                        class="btn-secondary"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_share_page" model="ir.actions.server">
+        <field name="name">Share…</field>
+        <field name="model_id" ref="document_page.model_document_page" />
+        <field name="binding_model_id" ref="document_page.model_document_page" />
+        <field name="binding_view_types">form</field>
+        <field
+            name="group_ids"
+            eval="[(4, ref('document_page.group_document_editor'))]"
+        />
+        <field name="state">code</field>
+        <field name="code">action = record.action_share_dialog()</field>
+    </record>
+</odoo>

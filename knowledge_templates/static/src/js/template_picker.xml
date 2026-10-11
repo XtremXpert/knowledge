@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="knowledge_templates.TemplatePicker">
+        <div t-if="this.state.templates.length" class="o_mk_templates">
+            <button
+                class="o_mk_template_card"
+                t-att-class="{ 'o_mk_template_selected': !this.selectedId }"
+                type="button"
+                t-on-click="() => this.pick(false)"
+            >
+                <i class="oi" data-icon="add" />
+                <span class="o_mk_template_name">Blank page</span>
+            </button>
+            <t t-foreach="this.state.templates" t-as="tpl" t-key="tpl.id">
+                <button
+                    class="o_mk_template_card"
+                    t-att-class="{ 'o_mk_template_selected': tpl.id === this.selectedId }"
+                    type="button"
+                    t-att-title="tpl.description or tpl.name"
+                    t-on-click="() => this.pick(tpl)"
+                >
+                    <i class="oi" t-att-data-icon="tpl.icon or 'description'" />
+                    <span class="o_mk_template_name" t-out="tpl.name" />
+                    <small
+                        t-if="tpl.description"
+                        class="o_mk_template_desc"
+                        t-out="tpl.description"
+                    />
+                </button>
+            </t>
+        </div>
+    </t>
+</templates>

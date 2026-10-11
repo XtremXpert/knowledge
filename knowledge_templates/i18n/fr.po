@@ -1,0 +1,309 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_templates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20260926\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 16:40+0000\n"
+"PO-Revision-Date: 2026-10-05 16:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,content:knowledge_templates.template_procedure
+msgid ""
+"<h2>Purpose</h2>\n"
+"<p>What this procedure is for, in one sentence.</p>\n"
+"<h2>When</h2>\n"
+"<p>Frequency or trigger (e.g. every autumn, after a power outage).</p>\n"
+"<h2>Materials</h2>\n"
+"<ul><li>Tool or product</li></ul>\n"
+"<h2>Steps</h2>\n"
+"<ol><li>First step</li><li>Second step</li></ol>\n"
+"<h2>Precautions</h2>\n"
+"<p>Safety notes, what not to do.</p>\n"
+"        "
+msgstr ""
+"<h2>Objet</h2>\n"
+"<p>À quoi sert cette procédure, en une phrase.</p>\n"
+"<h2>Quand</h2>\n"
+"<p>Fréquence ou déclencheur (p. ex. chaque automne, après une panne de courant).</p>\n"
+"<h2>Matériel</h2>\n"
+"<ul><li>Outil ou produit</li></ul>\n"
+"<h2>Étapes</h2>\n"
+"<ol><li>Première étape</li><li>Deuxième étape</li></ol>\n"
+"<h2>Précautions</h2>\n"
+"<p>Consignes de sécurité, ce qu'il ne faut pas faire.</p>\n"
+"        "
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,content:knowledge_templates.template_meeting
+msgid ""
+"<p><strong>Date:</strong> <br></p>\n"
+"<p><strong>Participants:</strong> <br></p>\n"
+"<h2>Agenda</h2>\n"
+"<ul><li>Topic</li></ul>\n"
+"<h2>Decisions</h2>\n"
+"<ul><li>Decision</li></ul>\n"
+"<h2>Actions</h2>\n"
+"<ul class=\"o_checklist\"><li>Who does what, by when</li></ul>\n"
+"        "
+msgstr ""
+"<p><strong>Date :</strong> <br></p>\n"
+"<p><strong>Participants :</strong> <br></p>\n"
+"<h2>Ordre du jour</h2>\n"
+"<ul><li>Sujet</li></ul>\n"
+"<h2>Décisions</h2>\n"
+"<ul><li>Décision</li></ul>\n"
+"<h2>Actions</h2>\n"
+"<ul class=\"o_checklist\"><li>Qui fait quoi, pour quand</li></ul>\n"
+"        "
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,content:knowledge_templates.template_recipe
+msgid ""
+"<p><strong>Servings:</strong> 4 · <strong>Preparation:</strong> 15 min · <strong>Cooking:</strong> 30 min</p>\n"
+"<h2>Ingredients</h2>\n"
+"<ul><li>Ingredient and quantity</li></ul>\n"
+"<h2>Steps</h2>\n"
+"<ol><li>First step</li><li>Second step</li></ol>\n"
+"<h2>Notes</h2>\n"
+"<p>Variations, tips, what to serve with it.</p>\n"
+"        "
+msgstr ""
+"<p><strong>Portions :</strong> 4 · <strong>Préparation :</strong> 15 min · <strong>Cuisson :</strong> 30 min</p>\n"
+"<h2>Ingrédients</h2>\n"
+"<ul><li>Ingrédient et quantité</li></ul>\n"
+"<h2>Étapes</h2>\n"
+"<ol><li>Première étape</li><li>Deuxième étape</li></ol>\n"
+"<h2>Notes</h2>\n"
+"<p>Variantes, astuces, accompagnements.</p>\n"
+"        "
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,content:knowledge_templates.template_equipment
+msgid ""
+"<table class=\"table table-bordered\">\n"
+"<tbody>\n"
+"<tr><td><strong>Brand and model</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Serial number</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Purchase date</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Supplier</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Warranty until</strong></td><td><br></td></tr>\n"
+"</tbody>\n"
+"</table>\n"
+"<h2>Maintenance</h2>\n"
+"<ul class=\"o_checklist\"><li>Yearly check</li><li>Filter or part to replace</li></ul>\n"
+"<h2>Manuals and documents</h2>\n"
+"<p>Links to the manual, invoice, warranty.</p>\n"
+"<h2>History</h2>\n"
+"<p>Repairs and interventions, with dates.</p>\n"
+"        "
+msgstr ""
+"<table class=\"table table-bordered\">\n"
+"<tbody>\n"
+"<tr><td><strong>Marque et modèle</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Numéro de série</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Date d'achat</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Fournisseur</strong></td><td><br></td></tr>\n"
+"<tr><td><strong>Garantie jusqu'au</strong></td><td><br></td></tr>\n"
+"</tbody>\n"
+"</table>\n"
+"<h2>Entretien</h2>\n"
+"<ul class=\"o_checklist\"><li>Vérification annuelle</li><li>Filtre ou pièce à remplacer</li></ul>\n"
+"<h2>Manuels et documents</h2>\n"
+"<p>Liens vers le manuel, la facture, la garantie.</p>\n"
+"<h2>Historique</h2>\n"
+"<p>Réparations et interventions, avec les dates.</p>\n"
+"        "
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: knowledge_templates
+#: model_terms:ir.ui.view,arch_db:knowledge_templates.view_page_template_form
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: knowledge_templates
+#. odoo-javascript
+#: code:addons/knowledge_templates/static/src/js/template_picker.xml:0
+msgid "Blank page"
+msgstr "Page vide"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,help:knowledge_templates.field_knowledge_page_template__category_id
+msgid "Category set on the new page when none is chosen yet."
+msgstr "Catégorie donnée à la nouvelle page si aucune n'est encore choisie."
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__content
+msgid "Content"
+msgstr "Contenu"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__category_id
+msgid "Default category"
+msgstr "Catégorie par défaut"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__description
+msgid "Description"
+msgstr "Description"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_document_page__display_name
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: knowledge_templates
+#: model:ir.model,name:knowledge_templates.model_document_page
+msgid "Document Page"
+msgstr "Page de document"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,name:knowledge_templates.template_equipment
+msgid "Equipment sheet"
+msgstr "Fiche d'équipement"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_document_page__id
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,help:knowledge_templates.field_knowledge_page_template__icon
+msgid ""
+"Icon name shown on the template card (e.g. checklist, build, restaurant)."
+msgstr ""
+"Nom de l'icône affichée sur la carte du modèle (p. ex. checklist, build, "
+"restaurant)."
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,description:knowledge_templates.template_recipe
+msgid "Ingredients, steps, cooking times"
+msgstr "Ingrédients, étapes, temps de cuisson"
+
+#. module: knowledge_templates
+#: model:ir.module.module,shortdesc:base.module_knowledge_templates
+msgid "Knowledge Templates"
+msgstr "Connaissances – Modèles de page"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,name:knowledge_templates.template_meeting
+msgid "Meeting notes"
+msgstr "Compte rendu"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,description:knowledge_templates.template_equipment
+msgid "Model, serial number, warranty, maintenance"
+msgstr "Modèle, numéro de série, garantie, entretien"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,help:knowledge_templates.field_knowledge_page_template__description
+msgid "One line shown under the name."
+msgstr "Une ligne affichée sous le nom."
+
+#. module: knowledge_templates
+#: model:ir.actions.act_window,name:knowledge_templates.action_page_template
+#: model:ir.ui.menu,name:knowledge_templates.menu_page_template
+msgid "Page templates"
+msgstr "Modèles de page"
+
+#. module: knowledge_templates
+#: model:ir.module.module,summary:base.module_knowledge_templates
+msgid "Page templates: pick one when creating a page, save a page as template"
+msgstr ""
+"Modèles de page : en choisir un à la création, enregistrer une page comme "
+"modèle"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,description:knowledge_templates.template_meeting
+msgid "Participants, decisions, actions"
+msgstr "Participants, décisions, actions"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,name:knowledge_templates.template_procedure
+msgid "Procedure"
+msgstr "Procédure"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,name:knowledge_templates.template_recipe
+msgid "Recipe"
+msgstr "Recette"
+
+#. module: knowledge_templates
+#: model:ir.actions.server,name:knowledge_templates.action_save_as_template
+msgid "Save as template"
+msgstr "Enregistrer comme modèle"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_knowledge_page_template__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: knowledge_templates
+#: model:knowledge.page.template,description:knowledge_templates.template_procedure
+msgid "Steps to follow, materials, precautions"
+msgstr "Étapes à suivre, matériel, précautions"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,field_description:knowledge_templates.field_document_page__page_template_id
+msgid "Template"
+msgstr "Modèle"
+
+#. module: knowledge_templates
+#: model:ir.model.fields,help:knowledge_templates.field_document_page__page_template_id
+msgid "Template the page was started from."
+msgstr "Modèle à partir duquel la page a été créée."
+
+#. module: knowledge_templates
+#: model:ir.model,name:knowledge_templates.model_knowledge_page_template
+msgid "Wiki page template"
+msgstr "Modèle de page du wiki"
+
+#. module: knowledge_templates
+#: model_terms:ir.ui.view,arch_db:knowledge_templates.view_page_template_form
+msgid "e.g. Procedure"
+msgstr "p. ex. Procédure"
