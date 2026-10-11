@@ -6,7 +6,7 @@ class DocumentPage(models.Model):
 
     page_template_id = fields.Many2one(
         "knowledge.page.template",
-        string="Template",
+        string="Page template",
         ondelete="set null",
         help="Template the page was started from.",
     )

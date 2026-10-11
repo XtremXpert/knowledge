@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <div name="chip_projet" position="after">
                 <div class="o_mk_chip" name="chip_equipment" title="Equipment">
-                    <i class="oi" data-icon="build" />
+                    <i title="Icon" class="oi" data-icon="build" />
                     <field
                         name="equipment_ids"
                         widget="many2many_tags"

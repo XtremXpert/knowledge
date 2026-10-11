@@ -29,6 +29,7 @@
                                 t-else=""
                                 class="oi"
                                 t-att-data-icon="record.type.raw_value === 'category' ? 'folder_open' : 'description'"
+                                title="Type"
                             />
                         </div>
                         <div class="o_mk_card_body">
@@ -37,14 +38,18 @@
                                 t-if="record.type.raw_value === 'category'"
                                 class="o_mk_card_meta"
                             >
-                                <i class="oi" data-icon="description" />
+                                <i title="Page" class="oi" data-icon="description" />
                                 <field name="page_count" /> pages
                             </div>
                             <div
                                 t-elif="record.parent_id.raw_value"
                                 class="o_mk_card_meta"
                             >
-                                <i class="oi" data-icon="folder_open" />
+                                <i
+                                    class="oi"
+                                    data-icon="folder_open"
+                                    title="Category"
+                                />
                                 <field name="parent_id" />
                             </div>
                             <field

@@ -36,10 +36,10 @@
             <xpath expr="//div[hasclass('oe_title')]" position="after">
                 <div class="o_mk_meta">
                     <div class="o_mk_chip" name="chip_categorie" title="Category">
-                        <i class="oi" data-icon="folder_open" />
+                        <i class="oi" data-icon="folder_open" title="Category" />
                     </div>
                     <div class="o_mk_chip" name="chip_projet" title="Project">
-                        <i class="oi" data-icon="work" />
+                        <i title="Icon" class="oi" data-icon="work" />
                     </div>
                 </div>
             </xpath>

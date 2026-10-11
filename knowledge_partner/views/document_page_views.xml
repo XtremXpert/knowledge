@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <div name="chip_projet" position="after">
                 <div class="o_mk_chip" name="chip_partner" title="Contacts">
-                    <i class="oi" data-icon="person" />
+                    <i title="Icon" class="oi" data-icon="person" />
                     <field
                         name="partner_ids"
                         widget="many2many_tags"
