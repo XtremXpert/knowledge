@@ -38,7 +38,7 @@ class DocumentPageHistory(models.Model):
         for rec in self:
             prev = history.search(
                 [
-                    ("page_id", "=", rec.page_id.id),
+                    ("page_id", "=", rec.page_id._origin.id),
                     ("create_date", "<", rec.create_date),
                 ],
                 limit=1,

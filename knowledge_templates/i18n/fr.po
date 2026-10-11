@@ -290,7 +290,7 @@ msgstr "Étapes à suivre, matériel, précautions"
 
 #. module: knowledge_templates
 #: model:ir.model.fields,field_description:knowledge_templates.field_document_page__page_template_id
-msgid "Template"
+msgid "Page template"
 msgstr "Modèle"
 
 #. module: knowledge_templates
