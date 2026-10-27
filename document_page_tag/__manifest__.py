@@ -13,7 +13,7 @@
     "data": [
         "views/document_page_tag.xml",
         "views/document_page.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
     ],
     "installable": True,
 }

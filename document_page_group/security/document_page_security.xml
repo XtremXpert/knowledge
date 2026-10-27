@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record model="ir.rule" id="document_page_groups_rule">
+    <!-- Odoo 20 : ir.rule est fusionne dans ir.access (operation + domain). -->
+    <record model="ir.access" id="document_page_groups_rule">
         <field name="name">document_page groups</field>
         <field name="model_id" ref="model_document_page" />
-        <field name="global" eval="True" />
+        <field name="operation">crud</field>
         <field
-            name="domain_force"
+            name="domain"
         >['|','&amp;',('type', '=', 'content'),'|','|',('parent_id', '=', False), ('parent_id.group_ids','=',False),('parent_id.group_ids.user_ids','=',user.id), '&amp;', ('type', '=', 'category'), '|', ('group_ids', '=', False), ('group_ids.user_ids', '=', user.id)]</field>
     </record>
 </odoo>
