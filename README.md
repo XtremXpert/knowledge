@@ -37,7 +37,12 @@ installation and production promotion are separate operations.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[document_knowledge](document_knowledge/) | 20.0.1.0.0 |  | Documents Knowledge
+[document_page](document_page/) | 20.0.1.0.0 |  | Document Page
 
 [//]: # (end addons)
 
