@@ -3,7 +3,7 @@
     "summary": "Document-style wiki pages: cover, cards, optional revision note",
     "author": "Benoit Vézina, Odoo Community Association (OCA)",
     "category": "Knowledge",
-    "version": "20.0.1.1.1",
+    "version": "20.0.1.1.2",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/knowledge",
     "depends": ["document_page", "document_page_project"],

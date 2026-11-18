@@ -77,6 +77,7 @@
                                 class="o_document_page_kanban_box"
                                 name="%(document_page.action_browse_all_content)d"
                                 type="action"
+                                context="{'search_default_parent_id': [id]}"
                             />
                         </div>
                     </t>

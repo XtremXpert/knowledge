@@ -84,9 +84,7 @@
         <field name="name">Browse Wiki Content</field>
         <field name="res_model">document.page</field>
         <field name="domain">[]</field>
-        <field
-            name="context"
-        >{'default_type': 'content', 'search_default_parent_id': [active_id] }</field>
+        <field name="context">{'default_type': 'content'}</field>
         <field name="view_mode">kanban,list,form</field>
         <field name="search_view_id" ref="view_wiki_filter" />
     </record>
@@ -170,6 +168,7 @@
                                 class="o_document_page_kanban_box"
                                 name="%(action_browse_all_content)d"
                                 type="action"
+                                context="{'search_default_parent_id': [id]}"
                             />
                         </div>
                     </t>
